@@ -16,9 +16,7 @@ app.use('/about', aboutRoute);
 app.use('/submit', submitRoute);
 //Here we're going to set up a form to submit from. We already have an
 //endpoint
-app.use("/submit-form", (req,res) =>
-  res.sendFile("/public/form.html", {root: __dirname})
-);
+
 /*
 app.get('/', (req,res) => res.send("Hello World!"));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
