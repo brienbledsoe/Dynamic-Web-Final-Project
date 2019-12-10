@@ -1,22 +1,23 @@
 {
-  "name": "final-proj",
+  "name": "node-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "This example is cool",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "firebase": "^7.5.2"
   },
   "engines": {
     "node": "12.13.0"
-  },
-  "keywords": [
-  "example",
-  "heroku"
-]
+  }
 }
