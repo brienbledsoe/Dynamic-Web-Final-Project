@@ -37,7 +37,7 @@ router.get("/test", (req,res)=>{
 //the user simply wants to hit an endpoint and the node server is making a post request so we are creating a get
 //request to make this happend
     try{
-      db.collection("BlogPosts")
+      db.collection("Posts")
       //setting an ID for the test doc
       .doc("test-doc") //setting the doc name
       .set(sampleData) //setting the doc to be our test-doc object
