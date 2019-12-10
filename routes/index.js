@@ -3,7 +3,7 @@ const router = express.Router();
 const firebase = require('firebase');
 
 const firebaseConfig = {
-	apiKey: "AIzaSyDLyFPNwUo7NTVmil332XCKolfmIHRv9Fo",
+	apiKey: "process.env.local",
 	authDomain: "social-media-final.firebaseapp.com",
 	databaseURL: "https://social-media-final.firebaseio.com",
 	projectId: "social-media-final",
