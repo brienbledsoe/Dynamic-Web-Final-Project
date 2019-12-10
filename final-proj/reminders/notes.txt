@@ -1,0 +1,10 @@
+your index.js file is your landing page and I will have a button called get started which will take
+a user to the login
+
+after the login page, if the user does not have an account they can click a link to take them to the
+signup page
+  * after the user has finished signing up they will then be taken to their user profile page
+
+  after either logging in or signing up, the user will then land on the USER PROFILE page
+    * user should be able to create a post
+    * 
