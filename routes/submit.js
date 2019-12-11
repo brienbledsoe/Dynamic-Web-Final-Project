@@ -60,6 +60,7 @@ router.get("/", (req,res)=>{
   let salary = req.query.salary ? req.query.salary: '';
   let university = req.query.university ? req.query.university: '';
   let question = req.query.userQuestion ? req.query.userQuestion: '';
+  let uid = req.query.userID ? req.query.userID: '';
   //let author = req.query.author ? req.query.author: '';
 
   db.collection("Posts")
@@ -73,7 +74,8 @@ router.get("/", (req,res)=>{
     name: name,
     salary: salary,
     university: university,
-    userQuestion: question
+    userQuestion: question,
+    userID: uid
   })
   .then(ref => res.send(ref))
   .catch(e => res.send(e));
