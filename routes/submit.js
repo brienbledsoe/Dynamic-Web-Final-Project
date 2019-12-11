@@ -52,15 +52,28 @@ router.get("/", (req,res)=>{
   //need to get a URL parameter here in node, how do we do this?
   /* ex: localhost:4000/submit?title=title&text=text&author=authornamewhatever*/
   //console.log(req.query) says its apart of node which has a lot of other options and information
-  let titleVal = req.query.title ? req.query.title: '';
-  let textVal = req.query.text ? req.query.text: '';
-  let author = req.query.author ? req.query.author: '';
+  let year = req.query.currYear ? req.query.currYear: '';
+  let major = req.query.currentMajor ? req.query.currentMajor: '';
+  let name = req.query.name ? req.query.name: '';
+  let salary = req.query.salary ? req.query.salary: '';
+  let university = req.query.university ? req.query.university: '';
+  let question = req.query.userQuestion ? req.query.userQuestion: '';
+  //let author = req.query.author ? req.query.author: '';
+
+  let salary = req.query.salary ? req.query.salary: '';
+  let university = req.query.university ? req.query.university: '';
   db.collection("Posts")
   .add({
     //will automatically generate an ID for this post
-    title: titleVal,
-    text: textVal,
-    author: author
+    //title: titleVal,
+    //text: textVal,
+    //author: author
+    currYear: year,
+    currentMajor: major,
+    name: name,
+    salary: salary,
+    university: university,
+    userQuestion: question
   })
   .then(ref => res.send(ref))
   .catch(e => res.send(e));
