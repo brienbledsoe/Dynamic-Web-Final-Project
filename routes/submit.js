@@ -65,10 +65,6 @@ router.get("/", (req,res)=>{
 
   db.collection("Posts")
   .add({
-    //will automatically generate an ID for this post
-    //title: titleVal,
-    //text: textVal,
-    //author: author
     currYear: year,
     currentMajor: major,
     name: name,
