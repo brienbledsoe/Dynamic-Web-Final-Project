@@ -28,7 +28,8 @@ const firebaseConfig = {
 //router.get("/:id", (req,res)=> previous code in line below, I'm removing
 //the :id behind the forward slash now in the line below
 router.get("/", (req,res)=> {
-  let queryID = req.params.id;
+  //let queryID = req.params.id;
+  let queryID = req.params;
   let docRef = db.collection("Posts").doc(queryID); //creating a reference to this docRef
   docRef //creating a reference of the document
   .get(getOptions) //getting the information were requesting, have to look at the docs to tell us what we are getting
