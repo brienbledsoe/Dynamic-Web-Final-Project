@@ -60,8 +60,6 @@ router.get("/", (req,res)=>{
   let question = req.query.userQuestion ? req.query.userQuestion: '';
   //let author = req.query.author ? req.query.author: '';
 
-  let salary = req.query.salary ? req.query.salary: '';
-  let university = req.query.university ? req.query.university: '';
   db.collection("Posts")
   .add({
     //will automatically generate an ID for this post
