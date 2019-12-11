@@ -22,7 +22,9 @@ const firebaseConfig = {
  const getOptions = {
    source:'cache'
  }
-router.get("/:id", (req,res)=> {
+//router.get("/:id", (req,res)=> previous code in line below, I'm removing
+//the :id behind the forward slash now in the line below
+router.get("/", (req,res)=> {
   let queryID = req.params.id;
   let docRef = db.collection("Posts").doc(queryID); //creating a reference to this docRef
   docRef //creating a reference of the document
