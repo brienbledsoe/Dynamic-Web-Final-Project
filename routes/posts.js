@@ -28,20 +28,31 @@ const firebaseConfig = {
 //router.get("/:id", (req,res)=> previous code in line below, I'm removing
 //the :id behind the forward slash now in the line below
 router.get("/", (req,res)=> {
-  //let queryID = req.params.id;
-  let queryID = req.params;
-  let docRef = db.collection("Posts").doc(queryID); //creating a reference to this docRef
-  docRef //creating a reference of the document
-  .get(getOptions) //getting the information were requesting, have to look at the docs to tell us what we are getting
-  .then(doc => res.send(doc.data())) // have to reference doc.data
-  .catch(error => res.send(error));
+  //need to get a URL parameter here in node, how do we do this?
+  /* ex: localhost:4000/submit?title=title&text=text&author=authornamewhatever*/
+  //console.log(req.query) says its apart of node which has a lot of other options and information
+  let year = req.query.currYear ? req.query.currYear: '';
+  let major = req.query.currentMajor ? req.query.currentMajor: '';
+  let name = req.query.name ? req.query.name: '';
+  let salary = req.query.salary ? req.query.salary: '';
+  let university = req.query.university ? req.query.university: '';
+  let question = req.query.userQuestion ? req.query.userQuestion: '';
+  //let author = req.query.author ? req.query.author: '';
 
+  db.collection("Posts")
+  .add({
+    //will automatically generate an ID for this post
+    //title: titleVal,
+    //text: textVal,
+    //author: author
+    currYear: year,
+    currentMajor: major,
+    name: name,
+    salary: salary,
+    university: university,
+    userQuestion: question
+  })
+  .then(ref => res.send(ref))
+  .catch(e => res.send(e));
 })
-
-// router.get('/', (req, res) =>(
-//   res.send('This is About The about me section')
-// ));
-// router.get('/me', (req,res) => res.send('About Me'));
-
-
 module.exports = router;
