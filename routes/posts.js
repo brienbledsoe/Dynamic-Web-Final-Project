@@ -56,7 +56,7 @@ router.get("/:id", (req,res)=> {
   .then(doc => res.send(doc.data())) // have to reference doc.data
   .catch(error => res.send(error));
 
-})
+//})
 
 // router.get('/', (req, res) =>(
 //   res.send('This is About The about me section')
