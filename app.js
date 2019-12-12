@@ -5,13 +5,13 @@ const port = process.env.PORT || 4000;
 const path = require("path");
 
 const indexRoute = require('./routes/index.js');
-const aboutRoute = require('./routes/posts.js');
+const postsRoute = require('./routes/posts.js');
 //Submit data
 const submitRoute = require('./routes/submit.js');
 /*Serve files in express*/
 app.use(express.static(path.join(__dirname,"public")));
 app.use('/', indexRoute);
-app.use('/about', aboutRoute);
+app.use('/posts', postsRoute);
 //set submit data route
 app.use('/submit', submitRoute);
 //Here we're going to set up a form to submit from. We already have an
