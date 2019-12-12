@@ -29,9 +29,29 @@ const firebaseConfig = {
 //the :id behind the forward slash now in the line below
 router.get("/:id", (req,res)=> {
   let queryID = req.params.id;
+  db.collection('Posts')
+  .where("userID" == queryID)
+  .get()
+  .then(snapshot => {
+    if (snapshot.empty) {
+      console.log('No matching documents.');
+      return;
+    }
+
+    snapshot.forEach(doc => {
+      posts.push(post.data());
+
+    });
+    res.send(posts);
+  })
+  .catch(err => {
+    console.log('Error getting documents', err);
+  });
+  })
   //let queryID = req.params;
   let docRef = db.collection("Posts").doc(queryID); //creating a reference to this docRef
   docRef //creating a reference of the document
+  .where("userID==")
   .get(getOptions) //getting the information were requesting, have to look at the docs to tell us what we are getting
   .then(doc => res.send(doc.data())) // have to reference doc.data
   .catch(error => res.send(error));
