@@ -30,7 +30,7 @@ const firebaseConfig = {
 router.get("/:id", (req,res)=> {
   let queryID = req.params.id;
   db.collection('Posts')
-  .where("userID" == queryID)
+  .where("userID", == ,queryID)
   .get()
   .then(snapshot => {
     if (snapshot.empty) {
