@@ -49,12 +49,12 @@ router.get("/:id", (req,res)=> {
   });
   })
   //let queryID = req.params;
-  let docRef = db.collection("Posts").doc(queryID); //creating a reference to this docRef
-  docRef //creating a reference of the document
-  .where("userID==")
-  .get(getOptions) //getting the information were requesting, have to look at the docs to tell us what we are getting
-  .then(doc => res.send(doc.data())) // have to reference doc.data
-  .catch(error => res.send(error));
+  // let docRef = db.collection("Posts").doc(queryID); //creating a reference to this docRef
+  // docRef //creating a reference of the document
+  // .where("userID==")
+  // .get(getOptions) //getting the information were requesting, have to look at the docs to tell us what we are getting
+  // .then(doc => res.send(doc.data())) // have to reference doc.data
+  // .catch(error => res.send(error));
 
 //})
 
