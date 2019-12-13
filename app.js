@@ -1,6 +1,7 @@
 
 const express = require('express');
 const app= express();
+const cors = require('cors');
 const port = process.env.PORT || 4000;
 const path = require("path");
 
@@ -10,6 +11,7 @@ const postsRoute = require('./routes/posts.js');
 const submitRoute = require('./routes/submit.js');
 /*Serve files in express*/
 app.use(express.static(path.join(__dirname,"public")));
+app.use(cors()); 
 app.use('/', indexRoute);
 app.use('/posts', postsRoute);
 //set submit data route
