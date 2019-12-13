@@ -27,6 +27,7 @@ const firebaseConfig = {
  }
 //router.get("/:id", (req,res)=> previous code in line below, I'm removing
 //the :id behind the forward slash now in the line below
+let posts =[]
 router.get("/:id", (req,res)=> {
   let queryID = req.params.id;
   db.collection('Posts')
@@ -42,12 +43,17 @@ router.get("/:id", (req,res)=> {
       posts.push(post.data());
 
     });
-    res.send(posts);
+
   })
   .catch(err => {
     console.log('Error getting documents', err);
+
+
   });
+  console.log("These are the users posts", posts); 
+  res.send(posts);
   })
+
   //let queryID = req.params;
   // let docRef = db.collection("Posts").doc(queryID); //creating a reference to this docRef
   // docRef //creating a reference of the document
