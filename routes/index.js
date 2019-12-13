@@ -27,7 +27,7 @@ db.collection('Posts').get()
       blogPosts.forEach(post => {
 			posts.push(post.data());
     });
-			console.log('blogPosts',blogPosts);
+			// console.log('blogPosts',blogPosts);
 		}
 	)
 	.catch(err => {
