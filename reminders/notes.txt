@@ -7,4 +7,4 @@ signup page
 
   after either logging in or signing up, the user will then land on the USER PROFILE page
     * user should be able to create a post
-    * 
+    *

@@ -7,25 +7,16 @@ const path = require("path");
 
 const indexRoute = require('./routes/index.js');
 const postsRoute = require('./routes/posts.js');
-//Submit data
 const submitRoute = require('./routes/submit.js');
-/*Serve files in express*/
+
 app.use(express.static(path.join(__dirname,"public")));
-app.use(cors()); 
+app.use(cors());
 app.use('/', indexRoute);
 app.use('/posts', postsRoute);
-//set submit data route
 app.use('/submit', submitRoute);
-//Here we're going to set up a form to submit from. We already have an
-//endpoint
 
-/*
-app.get('/', (req,res) => res.send("Hello World!"));
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-*/
 //--Serve static images
 app.use('/static', express.static('public'))
-//http://localhost:4000/static/LinkedInHeadshot_copied_inage.jpg this is the file path to locate the image in the browser after I type
-//npm start in the terminalcd
+
 
 app.listen(port, () => console.log(`Example app listening on port${port}`))
